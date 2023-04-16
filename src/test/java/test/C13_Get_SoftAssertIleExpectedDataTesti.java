@@ -8,6 +8,8 @@ import org.junit.Test;
 import org.testng.asserts.SoftAssert;
 
 import static io.restassured.RestAssured.given;
+import static org.testng.AssertJUnit.assertEquals;
+
 public class C13_Get_SoftAssertIleExpectedDataTesti {
 
     /*
@@ -78,13 +80,13 @@ public class C13_Get_SoftAssertIleExpectedDataTesti {
 
         SoftAssert softAssert = new SoftAssert();
 
-        softAssert.assertEquals( respJS.get("status") , expBody.get("status"));
-        softAssert.assertEquals( respJS.get("message") , expBody.get("message"));
-        softAssert.assertEquals( respJS.get("data.id") , expBody.getJSONObject("data").get("id"));
-        softAssert.assertEquals( respJS.get("data.employee_name") , expBody.getJSONObject("data").get("employee_name"));
-        softAssert.assertEquals( respJS.get("data.employee_salary") , expBody.getJSONObject("data").get("employee_salary"));
-        softAssert.assertEquals( respJS.get("data.employee_age") , expBody.getJSONObject("data").get("employee_age"));
-        softAssert.assertEquals( respJS.get("data.profile_image") , expBody.getJSONObject("data").get("profile_image"));
+        assertEquals( respJS.get("status") , expBody.get("status"));
+        assertEquals( respJS.get("message") , expBody.get("message"));
+        assertEquals( respJS.get("data.id") , expBody.getJSONObject("data").get("id"));
+        assertEquals( respJS.get("data.employee_name") , expBody.getJSONObject("data").get("employee_name"));
+        assertEquals( respJS.get("data.employee_salary") , expBody.getJSONObject("data").get("employee_salary"));
+        assertEquals( respJS.get("data.employee_age") , expBody.getJSONObject("data").get("employee_age"));
+        assertEquals( respJS.get("data.profile_image") , expBody.getJSONObject("data").get("profile_image"));
 
         softAssert.assertAll();
 
